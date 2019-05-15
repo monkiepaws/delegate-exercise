@@ -22,11 +22,6 @@ namespace Delegate_Exercise {
 
             var parser = CreateParser();
             csvHandler.ProcessCsv(readFilePath, optionalWriteFilePath, parser);
-            
-            var fileHandler = new FileHandler();
-            var csv = fileHandler.ReadFile(writeFilePath);
-            var data = fileHandler.ParseCsv(csv);
-            var personHandler = new PersonHandler(data);
         }
 
         private static Func<List<List<string>>, List<List<string>>> CreateGenericParser()
